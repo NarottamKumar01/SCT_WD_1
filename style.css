@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+header {
+  height: 100vh;
+  background: url('pexels-photo-2104152.jpeg') no-repeat center center/cover;
+  color: white;
+  position: relative;
+}
+
+nav {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+.logo {
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+.menu {
+  display: flex;
+  gap: 25px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  transition: 0.3s;
+}
+
+.menu a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: indianred;
+  bottom: -4px;
+  left: 0;
+  transition: width 0.3s;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+.register a {
+  background: indianred;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.register a:hover {
+  background: transparent;
+  border: 1px solid indianred;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.hero span {
+  font-size: 1.2em;
+  letter-spacing: 3px;
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.cta {
+  text-decoration: none;
+  background: indianred;
+  padding: 12px 25px;
+  color: white;
+  font-weight: 500;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.cta:hover {
+  background: transparent;
+  border: 1px solid indianred;
+}
+
+.dark-mode {
+  background: #111;
+  color: #f1f1f1;
+}
+
+.toggle-mode {
+  position: fixed;
+  top: 20px;
+  right: 25px;
+  font-size: 1.2em;
+  background: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#topBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 25px;
+  font-size: 1.5em;
+  border: none;
+  background-color: indianred;
+  color: white;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+}
+body.dark-mode {
+  background-color: #111;
+  color: #eee;
+}
+
+body.dark-mode header {
+  background: #111; 
+}
+
+body.dark-mode nav {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+body.dark-mode .logo,
+body.dark-mode .hamburger,
+body.dark-mode .menu a,
+body.dark-mode .register a {
+  color: #eee;
+}
+
+body.dark-mode .register a {
+  background: #333;
+  border: 1px solid #999;
+}
+
+body.dark-mode .register a:hover {
+  background: transparent;
+  color: indianred;
+}
+
+body.dark-mode .menu a:hover::after {
+  background: indianred;
+}
+
+body.dark-mode .cta {
+  background: #333;
+  border: 1px solid #999;
+  color: #eee;
+}
+
+body.dark-mode .cta:hover {
+  background: transparent;
+  color: indianred;
+  border-color: indianred;
+}
+
+body.dark-mode .toggle-mode {
+  color: indianred;
+}
+
+body.dark-mode #topBtn {
+  background-color: #333;
+  color: white;
+}
+
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    width: 200px;
+    padding: 20px;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    color: white;
+  }
+}
+
